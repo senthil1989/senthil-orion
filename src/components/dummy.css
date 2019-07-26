@@ -1,0 +1,26 @@
+.form-2 p:last-of-type {
+    clear: both;
+}
+
+.form-2 .opt {
+    text-align: right;
+    margin-right: 3px;
+}
+
+.form-2 label[for=showPassword] {
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: 11px;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+
+.form-2 input[type=checkbox] {
+    vertical-align: middle;
+    margin: -1px 5px 0 1px;
+}
+.container-fluid {
+    padding-right: 0px;
+    padding-left: 0px;
+
+}
