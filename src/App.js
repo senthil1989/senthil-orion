@@ -68,7 +68,8 @@ selectItemslength=(itemlen)=>{
 seachUpdate=(titlename)=>{
   this.setState({movietitle:titlename},() => {
   console.log(this.state.movietitle);
-  this.fetchdata();})
+  this.fetchdata();
+this.updateScreenstate({screenVal:'productPage',Username:this.state.Username})})
 
 
 
