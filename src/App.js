@@ -4,6 +4,7 @@ import Header from './components/Header.js';
 import Products from './components/Products.js';
 import Login from './components/Login.js';
 import Footer from './components/Footer.js';
+import Message from './components/Message.js';
 import MyContext from './components/Mycontext';
 
 class App extends Component {
@@ -40,11 +41,17 @@ class App extends Component {
       fetch('http://www.omdbapi.com/?i=tt3896198&apikey=fa281222'+'&s='+this.state.movietitle+'&page='+this.state.pagenum)
     .then(res=>res.json())
     .then(data=>{
-      if(data.response==true){
-      this.setState({data:data.Search})}
+      console.log(data.Response)
+      if(data.Response ==='True'){
+      return this.setState({data:data.Search})
+      }
       else{
-      console.log("jbsfjdhfjk")
-    }
+        console.log(data)
+
+      return this.setState({data:data.Error},()=>{
+        this.updateScreenstate({screenVal:'messageresult',Username:this.state.Username})
+      });
+      }
     }
     )
     }
@@ -61,7 +68,7 @@ selectItemslength=(itemlen)=>{
 seachUpdate=(titlename)=>{
   this.setState({movietitle:titlename},() => {
   console.log(this.state.movietitle);
-this.fetchdata();})
+  this.fetchdata();})
 
 
 
@@ -80,8 +87,9 @@ pagehandle=(num)=>{
         <div>
         {this.state.screenState === 'loginPage'? <Login updatescreen={this.updateScreenstate}/> : ""}
         {this.state.screenState !=='loginPage'?<Header onSearch={this.seachUpdate}/>:null}
-        {this.state.screenState === 'productPage'? <Products name ={this.state.Username} selecteditems={this.selectItemslength}updatescreen={this.updateScreenstate}/> : ""}
-        {this.state.screenState === 'productPage'?  <Footer pagicount={this.state.pcount} onpageclick={this.pagehandle}/> :""}
+        {this.state.screenState === 'productPage'?<Products name ={this.state.Username} selecteditems={this.selectItemslength}updatescreen={this.updateScreenstate}/> : ""}
+        {this.state.screenState === 'productPage'?<Footer pagicount={this.state.pcount} onpageclick={this.pagehandle}/> :""}
+        {this.state.screenState === 'messageresult'?<Message result={this.state.data}/> :""}
         </div>
       </MyContext.Provider>
     );

@@ -9,7 +9,7 @@ const Footer =(props)=>{
 
   return(
     <MyContext.Consumer>
-    {(value)=><nav aria-label="Page navigation example">
+    {(value)=><nav className="paginationstyle"aria-label="Page navigation example">
   <ul class="pagination">
   <Paginator value={props.pagicount} paginatorclick={props.onpageclick}/>
   </ul>

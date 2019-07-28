@@ -23,7 +23,7 @@ class Products extends Component{
   }
 
   rendercomp =(item)=>{
-    
+
     console.log(item);
     var Objkeys=this.getKeys(item);
 
@@ -37,12 +37,9 @@ class Products extends Component{
         <MyContext.Consumer>
         {(value) =>
           <div className="container-fluid">
-
-           <div>{this.props.name}</div>
             <div class="row">
                {this.rendercomp(value.items)}
             </div>
-            {value.username}
           </div>
         }
         </MyContext.Consumer>

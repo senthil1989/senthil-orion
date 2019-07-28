@@ -29,8 +29,7 @@ render(){
 <div className="row align-items-center">
 	<div className="col-lg-3">
 	<div className="brand-wrap">
-		<img className="logo" src="images/logo-dark.png" />
-		<h2 className="logo-text">LOGO</h2>
+		<h2 className="logo-text">Orion</h2>
 	</div>
 	</div>
 	<div className="col-lg-6 col-sm-6">
@@ -47,20 +46,12 @@ render(){
 	</div>
 	<div className="col-lg-3 col-sm-6">
 		<div className="widgets-wrap d-flex justify-content-end">
-			<div className="widget-header">
-				<a href="#" className="icontext">
-					<div className="icon-wrap icon-xs bg2 round text-secondary"><i className="fa fa-shopping-cart"></i></div>
-					<div className="text-wrap">
-						<div>hello{value.orderss}</div>
-					</div>
-				</a>
-			</div>
 			<div className="widget-header dropdown">
 				<a href="#" className="ml-3 icontext" data-toggle="dropdown" data-offset="20,10">
 					<div className="icon-wrap icon-xs bg2 round text-secondary"><i className="fa fa-user"></i></div>
-					<div className="text-wrap">
+					<div className="text-wrap cus-wrap">
 						<small>{value.username}</small>
-						<span>Login <i className="fa fa-caret-down"></i></span>
+						<span><i className="fa fa-caret-down"></i></span>
 					</div>
 				</a>
 				<div className="dropdown-menu dropdown-menu-right">

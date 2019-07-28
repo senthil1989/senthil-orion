@@ -6,7 +6,7 @@ class Productcard extends Component{
   constructor(props){
     super(props);
   }
-  
+
   selectItems=()=>{
     this.props.selectItems(this.props.index);
   }
@@ -15,7 +15,7 @@ class Productcard extends Component{
   return(
 <MyContext.Consumer>
 
-  {(value) =>  <div className="col-sm">
+  {(value) =>  <div className="col-sm mobres">
       <figure className="figure">
         <img className="productsize" src={value.items[this.props.record]["Poster"]} />
         <figcaption className="figure-caption">Name:{value.items[this.props.record]["Title"]}</figcaption>
