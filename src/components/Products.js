@@ -23,8 +23,10 @@ class Products extends Component{
   }
 
   rendercomp =(item)=>{
+    
+    console.log(item);
     var Objkeys=this.getKeys(item);
-    console.log(item[Objkeys[0]]);
+
 
      var result = Objkeys.map( (contents,index) => <Productcard index={index}  selectItems={this.selectItems} changeprod={this.props.updatescreen} key={index} record ={contents} items={item}/> )
     return result

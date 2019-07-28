@@ -11,11 +11,11 @@ class Login extends Component{
     }
   }
   loginValidate(e){
-  //  if(this.username.value ===this.state.name && this.password.value ===this.state.password){
-  //   this.props.updatescreen('productPage',this.username.value );
+   if(this.username.value ===this.state.name && this.password.value ===this.state.password){
+    this.props.updatescreen('productPage',this.username.value );
     this.props.updatescreen({screenVal: 'productPage', Username: this.username.value});
 
-  //}
+  }
 }
 
   render(){
